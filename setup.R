@@ -1,12 +1,11 @@
 # One time setup
 
-# install.packages('installr')
+#install.packages('installr')
 library(installr)
 
 updateR()
 
-require2(c("tidyverse", "nycflights13", "gapminder", "Lahman"))
+#install.packages(c("tidyverse", "nycflights13", "gapminder", "Lahman"))
 
+library(tidyverse)
 tidyverse_update()
-
-installr

@@ -56,4 +56,47 @@ ggplot(data = mpg) +
   geom_point(mapping = aes(x = displ, y = hwy)) +
   facet_wrap(~ class, nrow = 2)
 
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_grid(drv ~ cyl)
 
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_grid(. ~ cyl)
+
+# Exercises
+# 3.5.1.1
+ggplot(mpg) +
+  geom_point(aes(displ, hwy)) +
+  facet_grid(. ~ cty) # when you facet on a continuous variable it creates a
+  # facet for each of the unique values
+
+# 3.5.1.2
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = drv, y = cyl))
+  # the missing cells represent combinations that aren't present in the data
+
+# 3.5.1.3
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_grid(drv ~ .) # facet rows only
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_grid(. ~ cyl) # facet columns only
+
+# 3.5.1.4
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_wrap(~ class, nrow = 2)
+  # advantage are that is faster to understand the mpg of 2seaters
+  # disadvantage is that comparison is slightly more difficult than a color aes
+
+# 3.5.1.5
+?facet_wrap
+  # `nrow` and `ncol` control the number of rows and columns 
+  # facet_grid() doesn't need nrow or ncol because the number of cells is
+  # determined by the data
+
+# 3.5.1.6
+  # there is typically more room for columns

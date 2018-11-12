@@ -96,3 +96,18 @@ transmute(flights,
 
 # log2() interpretation - difference of 1 corresponds to doubling, -1 halving
 
+transmute(flights,
+  dep_time,
+  sched_dep_time,
+  mam_dep_time = ((dep_time %/% 100) * 60) + (dep_time %% 100),
+  mam_sched_dep_time = ((sched_dep_time %/% 100) * 60) + (sched_dep_time %% 100)
+)
+
+transmute(flights,
+  air_time,
+  dep_time,
+  arr_time,
+  calc_air_time = arr_time - dep_time
+)
+
+select(flights, dep_time, sched_dep_time, dep_delay)

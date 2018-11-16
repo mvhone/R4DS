@@ -96,6 +96,8 @@ transmute(flights,
 
 # log2() interpretation - difference of 1 corresponds to doubling, -1 halving
 
+#Exercises
+# 5.5.2.1
 transmute(flights,
   dep_time,
   sched_dep_time,
@@ -103,6 +105,7 @@ transmute(flights,
   mam_sched_dep_time = ((sched_dep_time %/% 100) * 60) + (sched_dep_time %% 100)
 )
 
+#5.5.2.2
 transmute(flights,
   air_time,
   dep_time,
@@ -110,4 +113,10 @@ transmute(flights,
   calc_air_time = arr_time - dep_time
 )
 
+#5.5.3.3
 select(flights, dep_time, sched_dep_time, dep_delay)
+
+#5.5.3.4
+flights_delayed <- mutate(flights, dep_delay_rank = min_rank(-dep_delay))
+flights_delayed <- filter(flights_delayed, dep_delay_rank <= 20)
+arrange(flights_delayed, dep_delay_rank)

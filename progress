@@ -18,3 +18,6 @@ Tuesday, November 6th - Manipulation basics, Add new variables with mutate() [r4
 Friday, November 16th - Manipulation basics, Grouped summaries with summarise() 
   [r4ds-5.6]
   https://dcl-2017-04.github.io/curriculum/manip-basics.html
+  
+Wednesday, November 21st, - Visualization basics (2)
+  select(part_ridership, "Fiscal", "Year", "MonthL", "Ridership_Per_RevHour")

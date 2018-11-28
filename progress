@@ -21,3 +21,5 @@ Friday, November 16th - Manipulation basics, Grouped summaries with summarise()
   
 Wednesday, November 21st, - Visualization basics (2)
   select(part_ridership, "Fiscal", "Year", "MonthL", "Ridership_Per_RevHour")
+  
+11/28/18 - visualisation basics (2) - r4ds-3.7
